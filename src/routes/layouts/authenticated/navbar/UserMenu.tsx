@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import Userfront from '@userfront/core';
 import { useTranslation } from 'react-i18next';
 
@@ -7,7 +6,7 @@ import { Routes } from '../../../routes';
 import { FaUser } from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
 
-const UserMenu: FC = () => {
+const UserMenu = () => {
   const { t } = useTranslation();
   const handleLogout = async () => {
     await Userfront.logout({ redirect: Routes.ROOT });
@@ -21,7 +20,7 @@ const UserMenu: FC = () => {
         >
           <FaUser size="15" />
         </button>
-        <ul className="dropdown-menu absolute sm:right-0 xl:right-auto text-gray-700 pt-1">
+        <ul className="dropdown-menu absolute sm:right-0 xl:right-auto text-gray-700 pt-1 hidden">
           <li
             className="bg-white border-2 rounded-sm border-blue-200 hover:bg-blue-200 hover:text-white py-2 px-2 block whitespace-no-wrap cursor-pointer"
             onClick={() => handleLogout()}
