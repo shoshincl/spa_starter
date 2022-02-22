@@ -1,6 +1,6 @@
-import { FC } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { ToastContainer } from 'react-toastify';
 
 import type { RouteObject } from 'react-router-dom';
 
@@ -9,9 +9,10 @@ import { Routes } from './routes';
 import PublicLayout from './layouts/public';
 
 import Root from './Root';
+import Login from './Login';
 import NotFound from './NotFound';
 
-const Router: FC = () => {
+const Router = () => {
   const { t } = useTranslation();
   const routes: RouteObject[] = [
     {
@@ -30,13 +31,33 @@ const Router: FC = () => {
       children: [{ index: true, element: <Root /> }],
     },
     {
+      path: Routes.LOGIN,
+      element: (
+        <PublicLayout
+          helmet={{
+            title: t('routes.login.helmet.TITLE'),
+            meta: {
+              name: t('routes.login.helmet.meta.NAME'),
+              content: t('routes.login.helmet.meta.CONTENT'),
+            },
+          }}
+        />
+      ),
+      children: [{ index: true, element: <Login /> }],
+    },
+    {
       path: Routes.NOT_FOUND,
       element: <NotFound />,
     },
     { path: '*', element: <Navigate to={Routes.NOT_FOUND} /> },
   ];
   const router = useRoutes(routes);
-  return router;
+  return (
+    <>
+      <ToastContainer />
+      {router}
+    </>
+  );
 };
 
 export default Router;

@@ -1,11 +1,116 @@
 {
   "routes": {
+    "layouts": { "authenticated": { "navbar": { "ACTION_LOGOUT": "Logout" } } },
     "root": {
       "helmet": {
         "TITLE": "INDEX",
         "meta": {
           "NAME": "index",
           "CONTENT": "index"
+        }
+      }
+    },
+    "login": {
+      "helmet": {
+        "TITLE": "Login",
+        "meta": {
+          "NAME": "login",
+          "CONTENT": "login-page"
+        }
+      },
+      "HEADING": "Login"
+    },
+    "forgot_password": {
+      "helmet": {
+        "TITLE": "Forgot Password",
+        "meta": {
+          "NAME": "forgot-password",
+          "CONTENT": "forgot-password-page"
+        }
+      },
+      "HEADING": "Forgot Password"
+    },
+    "reset_password": {
+      "helmet": {
+        "TITLE": "Reset Password",
+        "meta": {
+          "NAME": "reset-password",
+          "CONTENT": "reset-password-page"
+        }
+      },
+      "HEADING": "Reset Password"
+    },
+    "signup": {
+      "helmet": {
+        "TITLE": "Signup",
+        "meta": {
+          "NAME": "signup",
+          "CONTENT": "signup-page"
+        }
+      },
+      "HEADING": "Sign Up"
+    },
+    "tos": {
+      "helmet": {
+        "TITLE": "Terms of Service",
+        "meta": {
+          "NAME": "tos",
+          "CONTENT": "tos-page"
+        }
+      },
+      "HEADING": "Sign Up"
+    }
+  },
+  "ui": {
+    "components": {
+      "alerts": {
+        "ACCOUNT_NOT_VERIFIED": "Account not verified. Validate email"
+      },
+      "forms": {
+        "users": {
+          "login": {
+            "fields": {
+              "EMAIL_PH": "your@email.com",
+              "EMAIL_LBL": "E-mail",
+              "PASSWORD_PH": "********",
+              "PASSWORD_LBL": "Password"
+            },
+            "actions": {
+              "SUBMIT": "Login",
+              "FORGOT_PASSWORD": "Forgot password?"
+            }
+          },
+          "forgot_password": {
+            "actions": {
+              "SUBMIT": "Reset Password"
+            },
+            "toasts": {
+              "EMAIL_SENT": "Email sent"
+            }
+          },
+          "reset_password": {
+            "fields": {
+              "NEW_PASSWORD_LBL": "Password",
+              "NEW_PASSWORD_PH": "New password"
+            },
+            "actions": {
+              "SUBMIT": "Update password"
+            },
+            "toasts": {
+              "PASSWORD_RESTORED": "Password updated"
+            }
+          },
+          "signup": {
+            "fields": {
+              "TOS_LBL": "Terms of Service"
+            },
+            "actions": {
+              "SUBMIT": "Signup"
+            },
+            "toasts": {
+              "SUCCESS": "Account created"
+            }
+          }
         }
       }
     }
