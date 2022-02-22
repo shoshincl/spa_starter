@@ -9,8 +9,10 @@ import { Routes } from './routes';
 import PublicLayout from './layouts/public';
 
 import Root from './Root';
+import ForgotPassword from './ForgotPassword';
 import Login from './Login';
 import NotFound from './NotFound';
+import ResetPassword from './ResetPassword';
 
 const Router = () => {
   const { t } = useTranslation();
@@ -44,6 +46,36 @@ const Router = () => {
         />
       ),
       children: [{ index: true, element: <Login /> }],
+    },
+    {
+      path: Routes.FORGOT_PASSWORD,
+      element: (
+        <PublicLayout
+          helmet={{
+            title: t('routes.forgot_password.helmet.TITLE'),
+            meta: {
+              name: t('routes.forgot_password.helmet.meta.NAME'),
+              content: t('routes.forgot_password.helmet.meta.CONTENT'),
+            },
+          }}
+        />
+      ),
+      children: [{ index: true, element: <ForgotPassword /> }],
+    },
+    {
+      path: Routes.RESET_PASSWORD,
+      element: (
+        <PublicLayout
+          helmet={{
+            title: t('routes.reset_password.helmet.TITLE'),
+            meta: {
+              name: t('routes.reset_password.helmet.meta.NAME'),
+              content: t('routes.reset_password.helmet.meta.CONTENT'),
+            },
+          }}
+        />
+      ),
+      children: [{ index: true, element: <ResetPassword /> }],
     },
     {
       path: Routes.NOT_FOUND,
