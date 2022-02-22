@@ -6,6 +6,7 @@ import type { RouteObject } from 'react-router-dom';
 
 import { Routes } from './routes';
 
+import AuthenticatedLayout from './layouts/authenticated';
 import PublicLayout from './layouts/public';
 
 import Root from './Root';
@@ -13,6 +14,7 @@ import ForgotPassword from './ForgotPassword';
 import Login from './Login';
 import NotFound from './NotFound';
 import ResetPassword from './ResetPassword';
+import ValidateAccount from './ValidateAccount';
 
 const Router = () => {
   const { t } = useTranslation();
@@ -76,6 +78,11 @@ const Router = () => {
         />
       ),
       children: [{ index: true, element: <ResetPassword /> }],
+    },
+    {
+      path: Routes.VALIDATE_ACCOUNT,
+      element: <AuthenticatedLayout />,
+      children: [{ index: true, element: <ValidateAccount /> }],
     },
     {
       path: Routes.NOT_FOUND,
