@@ -1,9 +1,20 @@
 # Product Web App
 
-## Available Scripts
+MVP SPA Frontend.
 
-### `npm start`
+Bare Minimum Code to bootstrap any digital product web client.
 
-### `npm test`
+React(ts) / Apollo / React-Router-6 / Userfront / TailwindCSS
 
-### `npm run build`
+Auth is not navigable. Manually visit `/signup` & `/login` to create an account
+and sign in.
+
+## How to run this project
+
+### add userfront tenant id .env. Create [userfront](https://www.userfront.com) account if you don't have any.
+
+### replace api uris dev & prod env
+
+### run `npm i --s`
+
+### then `npm start`
